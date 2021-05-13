@@ -1,0 +1,29 @@
+@import "../../../common";
+
+:host {
+  width: 300px;
+}
+
+ul {
+  list-style: none;
+  padding: 1em 0;
+  margin: 0;
+  font-size: 15pt;
+
+  li {
+    margin: 0;
+    padding: .5em;
+
+    &:hover {
+      background: $color-blue-light;
+    }
+
+    span {
+      cursor: pointer;
+    }
+
+    input {
+      margin: 0 1em 0 0;
+    }
+  }
+}
