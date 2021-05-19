@@ -7,28 +7,27 @@
 >
   <h1>Фильмы</h1>
   <h3>Тут будет описание как добовлять и смотреть инфу про фильмы</h3>
-  {{auth.authorized}}
-  <ng-template [ngIf]="auth.authorized" [ngIfElse]="elseBlock">
-    <div
-      class="container"
-    >
-      <div class="film-list-section">
-        <div>
-          <app-search-panel></app-search-panel>
-        </div>
-        <app-block-film></app-block-film>
+  <div
+    class="container"
+    *ngIf="authorized; else elseBlock"
+  >
+    <div class="film-list-section">
+      <div>
+        <app-search-panel></app-search-panel>
       </div>
-      <div
-        class="view-content"
-      >
-        <div *ngIf="modal.open">
-          <div *ngIf="modal.loading">loading...</div>
-          <app-info [info]="modal.content"></app-info>
-        </div>
+      <app-block-film></app-block-film>
+    </div>
+    <div
+      class="view-content"
+    >
+      <div *ngIf="modal.open">
+        <div *ngIf="modal.loading">loading...</div>
+        <app-info [info]="modal.content"></app-info>
       </div>
     </div>
-  </ng-template>
+  </div>
   <ng-template #elseBlock>
-    Вы не вошли
+    <p>Вы не вошли</p>
   </ng-template>
+
 </div>

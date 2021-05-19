@@ -7,6 +7,8 @@ import { Notification } from '../domain/notification/notification';
 export class NotificationService {
   notifications: Notification[] = [];
 
+  auth = false;
+
   constructor() {
     this.removeNotification = this.removeNotification.bind(this);
   }
