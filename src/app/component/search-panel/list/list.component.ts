@@ -30,7 +30,15 @@ export class SearchListResultComponent implements OnInit {
   async getInfo(film: Film): Promise<void> {
     const filmDetail = await this.tmdbRepository.getDetailMovie(film.id);
     console.log('getInfo', filmDetail);
-    this.contentService.setContent(filmDetail);
+    this.contentService.setContent(
+      filmDetail,
+      [
+        {
+          handler: this.save.bind(this),
+          title: 'Добавить'
+        },
+      ]
+    );
   }
 
   save(event: Event, film: Film): void {

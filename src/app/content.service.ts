@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Film } from '../domain/film/Film';
+import {IButton} from './types';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,8 @@ export class ContentService {
 
   loading = false;
 
+  btns?: IButton[];
+
   constructor() {
   }
 
@@ -19,8 +22,9 @@ export class ContentService {
 
   }
 
-  setContent(content: Film): void {
+  setContent(content: Film, btns?: IButton[]): void {
     this.content = content;
+    this.btns = btns;
     this.show();
   }
 

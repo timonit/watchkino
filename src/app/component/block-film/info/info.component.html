@@ -30,3 +30,12 @@
     target="_blank"
   >{{video.type}} - {{video.name}}</a>
 </div>
+<div *ngIf="btns && btns.length">
+  <button
+    *ngFor="let btn of btns"
+    type="button"
+    (click)="btn.handler()"
+  >
+    {{btn.title}}
+  </button>
+</div>
