@@ -6,7 +6,6 @@ import { BlockFilmComponent } from './block-film/block-film.component';
 import { ListComponent } from './block-film/list/list.component';
 import { InfoComponent } from './block-film/info/info.component';
 import { ReactiveFormsModule } from '@angular/forms';
-// import { FormsModule } from '@angular/forms';
 import { ItemComponent } from './block-film/list/item/item.component';
 import { SearchPanelComponent} from './search-panel/search-panel.component';
 import { SearchListResultComponent } from './search-panel/list/list.component';
@@ -41,7 +40,6 @@ import { UserPanelComponent } from './user-panel/user-panel.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    // FormsModule,
   ],
 })
 export class ComponentModule {

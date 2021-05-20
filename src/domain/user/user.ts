@@ -30,7 +30,7 @@ export class User extends Entity {
   }
 
   publish(eventName: string, data: any): void {
-    console.log('publish', eventName);
+    console.log('Опубликовано событие', eventName);
     this.eventListeners[eventName].forEach((handler) => handler(data));
   }
 

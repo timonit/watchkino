@@ -33,7 +33,6 @@ Backendless.initApp(APP_ID, APP_KEY);
     {
       provide: 'filmRepository',
       useClass: FilmRepository,
-      // useValue: new FilmRepository(),
     },
     {
       provide: 'TMDBRepository',
@@ -49,7 +48,7 @@ Backendless.initApp(APP_ID, APP_KEY);
     },
     {
       provide: 'user',
-      useValue: new User(),
+      useClass: User,
     }
   ],
   bootstrap: [AppComponent],
