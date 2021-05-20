@@ -22,7 +22,7 @@
     >
       <div *ngIf="modal.open">
         <div *ngIf="modal.loading">loading...</div>
-        <app-info [info]="modal.content"></app-info>
+        <app-info [info]="modal.content" [btns]="modal.btns"></app-info>
       </div>
     </div>
   </div>

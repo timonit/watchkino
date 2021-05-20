@@ -8,6 +8,7 @@ import {
 import { NotificationService } from './notification.service';
 import { User } from '../domain/user/user';
 import { Film } from '../domain/film/Film';
+import { ContentService } from './content.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent implements OnInit {
   authorized = false;
 
   constructor(
-    @Inject('modal') public modal: { open: boolean, content?: Film, loading: false },
+    @Inject('modal') public modal: ContentService,
     @Inject('user') public user: User,
     public notification: NotificationService,
   ) {

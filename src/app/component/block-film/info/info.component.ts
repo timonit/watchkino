@@ -1,6 +1,7 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Film } from '../../../../domain/film/Film';
 import { TMDBRepository } from '../../../../infrastructure/repository/TMDBRepository';
+import { IButton } from '../../../types';
 
 @Component({
   selector: 'app-info',
@@ -10,6 +11,9 @@ import { TMDBRepository } from '../../../../infrastructure/repository/TMDBReposi
 export class InfoComponent implements OnInit {
   @Input()
   info: Film;
+
+  @Input()
+  btns?: IButton[];
 
   constructor(
     @Inject('TMDBRepository') public tmdbRepository: TMDBRepository,
