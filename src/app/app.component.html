@@ -1,33 +1,7 @@
-<app-header></app-header>
-<div class="informer">
-  <app-notification-list [notificationList]="notification.notifications"></app-notification-list>
-</div>
-<div
-  class="body"
->
-  <h1>Фильмы</h1>
-  <h3>Тут будет описание как добовлять и смотреть инфу про фильмы</h3>
-  <div
-    class="container"
-    *ngIf="authorized; else elseBlock"
-  >
-    <div class="film-list-section">
-      <div>
-        <app-search-panel></app-search-panel>
-      </div>
-      <app-block-film></app-block-film>
-    </div>
-    <div
-      class="view-content"
-    >
-      <div *ngIf="modal.open">
-        <div *ngIf="modal.loading">loading...</div>
-        <app-info [info]="modal.content" [btns]="modal.btns"></app-info>
-      </div>
-    </div>
+<h3>Тут будет описание как добовлять и смотреть инфу про фильмы</h3>
+<app-content>
+  <app-block-film-list block-film></app-block-film-list>
+  <div *ngIf="content.open">
+    <app-info [info]="content.content"></app-info>
   </div>
-  <ng-template #elseBlock>
-    <p>Вы не вошли</p>
-  </ng-template>
-
-</div>
+</app-content>

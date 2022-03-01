@@ -1,9 +1,8 @@
 import { RemoteRepository } from './remote.repository';
-import { Film } from '../../domain/film/Film';
-import { FilmInfoDTO } from '../../domain/filmDTO';
+import { Film } from '../../domain/film/film';
 import { GenreObjectValue } from '../../domain/object-value/genre.object-value';
 import { GenreDto } from '../../domain/genre.dto';
-import { RecursiveTemplateAstVisitor } from '@angular/compiler';
+import { FilmAttrs } from '../../domain/film/film.attrs';
 
 const auth = {
   key: 'api_key',
@@ -11,6 +10,7 @@ const auth = {
 };
 const authQuery = `${auth.key}=${auth.value}`;
 const url = 'https://api.themoviedb.org/3';
+const imageUrl = 'https://image.tmdb.org/t/p';
 
 export class TMDBRepository extends RemoteRepository {
 
@@ -58,7 +58,7 @@ export class TMDBRepository extends RemoteRepository {
 
   async moviesWithTitle(title: string): Promise<Film[]> {
     const results = await fetch(`${url}/search/movie?${authQuery}&${this.language}&query=${title}`);
-    const parsed: FilmInfoDTO[] = await results.json().then((obj) => obj.results);
+    const parsed: FilmAttrs[] = await results.json().then((obj) => obj.results);
     return parsed.map((dto) => new Film(dto));
   }
 
@@ -66,5 +66,11 @@ export class TMDBRepository extends RemoteRepository {
     const path = `movie/${id}?append_to_response=videos,images`;
     const response = await fetch(`${url}/${path}&${authQuery}&${this.language}`);
     return new Film(await response.json());
+  }
+
+  async getCredit(movieId: number): Promise<any> {
+    const path = `/movie/${movieId}/credits`;
+    const response = await fetch(`${url}/${path}?${authQuery}&${this.language}`);
+    return response.json();
   }
 }

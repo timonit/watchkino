@@ -1,11 +1,7 @@
-import { Film } from './Film';
+import { Film } from './film';
 
 export interface IFilmRepository {
-  add(film: Film): Promise<boolean>;
+  addFilm(film: Film): Promise<boolean>;
 
   allFilms(): Promise<Film[]>;
-
-  // filmWithName(name: string): Promise<Film>;
-  //
-  // moviesWithTitle(title: string): Promise<Film[]>;
 }

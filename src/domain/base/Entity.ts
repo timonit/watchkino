@@ -1,3 +1,7 @@
-export abstract class Entity {
-  abstract id: string | number;
+export abstract class Entity<T> {
+  attrs: T;
+
+  constructor(attrs: T) {
+    this.attrs = attrs;
+  }
 }

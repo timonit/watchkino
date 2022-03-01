@@ -1,0 +1,16 @@
+@import "../../../common";
+
+:host {
+  padding: .3em .5em;
+  border-radius: 5px;
+
+  &.primary {
+    background-color: $color-primary;
+  }
+  &.success {
+    background-color: $color-success;
+  }
+  &.danger {
+    background-color: $color-danger;
+  }
+}

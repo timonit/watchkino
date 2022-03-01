@@ -1,51 +1,17 @@
-@import "../../common";
-
 :host {
+  padding: .5em;
   display: flex;
-  position: relative;
-  //width: 280px;
-  padding: 10px 0;
   flex-direction: column;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
-
-form {
-  position: relative;
-  height: 20px;
-  display: flex;
-  background: $color-white;
-  padding: 10px;
-  border-radius: 14px;
+  background-color: whitesmoke;
+  border-radius: .5em;
 
   input {
     border: none;
-    height: 100%;
-    background: none;
+    background-color: transparent;
+    font-size: 13pt;
 
     &:focus {
       outline: none;
     }
   }
-
-  .button {
-    border-left: solid 1px $color-blue-light;
-    outline: none;
-    padding: 0 10px;
-    height: 100%;
-    cursor: pointer;
-    color: $color-blue-dark;
-  }
-}
-
-.result-list {
-  position: absolute;
-  box-sizing: border-box;
-  top: 60px;
-  left: 0;
-  padding: 10px;
-  border-radius: 5px;
-  max-height: 500px;
-  overflow: auto;
-  background: $color-white-dark;
 }
