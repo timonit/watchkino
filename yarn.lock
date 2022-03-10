@@ -1050,7 +1050,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.8.4":
   version "7.13.17"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.17.tgz#8966d1fc9593bf848602f0662d6b4d0069e3a7ec"
   integrity sha512-NCdgJEelPTSh+FEFylhnP1ylq848l1z9t9N0j1Lfbcw0+KXGjsTvUmkxy+voLLXB5SOKMbLLx4jxYliGrYQseA==
@@ -1777,30 +1777,6 @@ babel-plugin-dynamic-import-node@^2.3.3:
   integrity sha512-jZVI+s9Zg3IqA/kdi0i6UDCybUI3aSBLnglhYbSSjKlV7yF1F/5LWv8MakQmvYpnbJDS6fcBL2KzHSxNCMtWSQ==
   dependencies:
     object.assign "^4.1.0"
-
-backendless-request@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/backendless-request/-/backendless-request-0.1.1.tgz#dad2635af2d9150b7490a26641fbce2539db93df"
-  integrity sha512-X92cJA+xzilLdU0DUbeWoRIc+T4djoQ7baRR8G2UzBkmQSZKt/1x4LfVYxOrR6BUOBRDD7XjjTnmq9bARi+k9w==
-  dependencies:
-    form-data "^2.3.1"
-
-backendless-rt-client@0.0.23:
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/backendless-rt-client/-/backendless-rt-client-0.0.23.tgz#6bc1b925b36ba17b20be9448d96100e428fc8f0f"
-  integrity sha512-VwrtDQwvFPWA+wtAFPHmq3ACLyw5MA3mhlW6L2bLH2P111NcV++iyiVrQNDQq9WIHiS6BUDbutMmjJdziiaRhA==
-  dependencies:
-    backendless-request "^0.1.1"
-    socket.io-client "^2.0.3"
-
-backendless@^6.2.6:
-  version "6.2.6"
-  resolved "https://registry.yarnpkg.com/backendless/-/backendless-6.2.6.tgz#6d53f42d613d935bb80015e945109750f8ced478"
-  integrity sha512-7xP4iZLB3nsnA8UzoVC5yxvWa9xXTIEl/MUiLonV98WZryOgPeXuRq3F2SuwDpESMCHWd8tD7WttpATKYrRKLg==
-  dependencies:
-    "@babel/runtime" "^7.8.7"
-    backendless-request "^0.1.1"
-    backendless-rt-client "0.0.23"
 
 backo2@1.0.2:
   version "1.0.2"
@@ -3862,15 +3838,6 @@ forever-agent@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
   integrity sha1-+8cfDEGt6zf5bFd60e1C2P2sypE=
-
-form-data@^2.3.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.5.1.tgz#f2cbec57b5e59e23716e128fe44d4e5dd23895f4"
-  integrity sha512-m21N3WOmEEURgk6B9GLOE4RuWOFf28Lhh9qGYeNlGq4VDXUlJy2th2slBNU8Gp8EzloYZOibZJ7t5ecIrFSjVA==
-  dependencies:
-    asynckit "^0.4.0"
-    combined-stream "^1.0.6"
-    mime-types "^2.1.12"
 
 form-data@~2.3.2:
   version "2.3.3"
@@ -7640,7 +7607,7 @@ socket.io-adapter@~1.1.0:
   resolved "https://registry.yarnpkg.com/socket.io-adapter/-/socket.io-adapter-1.1.2.tgz#ab3f0d6f66b8fc7fca3959ab5991f82221789be9"
   integrity sha512-WzZRUj1kUjrTIrUKpZLEzFZ1OLj5FwLlAFQs9kuZJzJi5DKdU7FsWc36SNmA8iDOtwBQyT8FkrriRM8vXLYz8g==
 
-socket.io-client@2.4.0, socket.io-client@^2.0.3:
+socket.io-client@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/socket.io-client/-/socket.io-client-2.4.0.tgz#aafb5d594a3c55a34355562fc8aea22ed9119a35"
   integrity sha512-M6xhnKQHuuZd4Ba9vltCLT9oa+YvTsP8j9NcEiLElfIg8KeYPyhWOes6x4t+LTAC8enQbE/995AdTem2uNyKKQ==

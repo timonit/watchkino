@@ -1,12 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, HostListener, Inject, Input } from '@angular/core';
 import { TMDBRepository } from '../../../infrastructure/repository/TMDBRepository';
-import { Film } from '../../../domain/film/Film';
-import { FilmRepository } from '../../../infrastructure/repository/FilmRepository';
-import { NotificationService } from '../../notification.service';
+import { ContentService } from '../../service/content/content.service';
 
-enum FilmFindStatus {
-  FILM_NOT_FOUND = 'Ничего не найдено',
+interface Attrs {
+  title: string;
+  id: number;
 }
 
 @Component({
@@ -14,55 +12,49 @@ enum FilmFindStatus {
   templateUrl: './search-panel.component.html',
   styleUrls: ['./search-panel.component.scss'],
 })
-export class SearchPanelComponent implements OnInit {
-  form = this.fb.group({
-    title: [''],
-  });
+export class SearchPanelComponent {
+  @Input() items: Attrs[] = [];
 
-  notFound: string;
+  show = false;
 
-  searchResult: Film[] | FilmFindStatus[] = [];
+  private timerFinished = true;
+
+  private timer?: number;
+
+  @HostListener('focusin', ['$event']) returnFocus(event: Event): void {
+    if (this.items.length) {
+      this.show = true;
+    }
+  }
 
   constructor(
-    @Inject('TMDBRepository') private tmdb: TMDBRepository,
-    @Inject('filmRepository') private filmRepository: FilmRepository,
-    @Inject('notification') private notification: NotificationService,
-    private fb: FormBuilder,
+    @Inject('TMDBRepository') private tmdbRepo: TMDBRepository,
+    @Inject('content') private content: ContentService,
   ) {
   }
 
-  ngOnInit(): void {
+  async handlerSelect(index: number): Promise<void> {
+    const film = await this.tmdbRepo.getDetailMovie(this.items[index].id);
+
+    this.content.setContent(film);
+    this.show = false;
   }
 
-  async saveFilm(film: Film): Promise<void> {
-    try {
-      await this.filmRepository.add(film);
-      this.notification.addNotification(`Добавлен фильм ${film.title}`);
-    } catch (error) {
-      console.error(error);
-    }
+  async inputHandler(event: Event): Promise<void> {
+    this.timerFinished = false;
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      const target = event.target as HTMLInputElement;
+      if (target.value.length > 2) {
+        this.search(target.value);
+        this.show = true;
+      }
+    }, 1000);
   }
 
-  changeTitle(): void {
-    if (this.form.get('title').value === '') {
-      this.clear();
-    }
-  }
-
-  async search(event: Event): Promise<void> {
-    event.preventDefault();
-    const title = this.form.get('title').value;
-    const result = await this.tmdb.moviesWithTitle(title);
-    if (result.length) {
-      this.notFound = undefined;
-      this.searchResult = result;
-    } else {
-      this.notFound = FilmFindStatus.FILM_NOT_FOUND;
-    }
-  }
-
-  clear(): void {
-    this.notFound = undefined;
-    this.searchResult = [];
+  async search(str: string): Promise<void> {
+    this.items = await this.tmdbRepo.moviesWithTitle(str)
+      .then((result) => result.map((film) => (film.attrs)));
+    console.log(this.items[0]);
   }
 }

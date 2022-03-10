@@ -1,0 +1,32 @@
+@import "../../common";
+
+ul {
+  li {
+    display: flex;
+    align-items: center;
+    padding: .5em;
+
+    span {
+      padding-left: .5em;
+    }
+  }
+}
+
+.videos {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    display: flex;
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    background: $color-white-dark;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      background: $color-blue-light;
+    }
+  }
+}

@@ -1,16 +1,7 @@
-<form [formGroup]="form" (submit)="search($event)">
-  <input
-    name="title"
-    (input)="changeTitle()"
-    (keydown.escape)="clear()"
-    formControlName="title"
-    placeholder="search"
-  />
-  <div (click)="search($event)" class="button">search</div>
-</form>
-<div class="result-list" *ngIf="notFound">
-  <app-search-list-result [notFound]="notFound"></app-search-list-result>
-</div>
-<div class="result-list" *ngIf="searchResult.length">
-  <app-search-list-result [list]="searchResult" (savedFilm)="saveFilm($event)"></app-search-list-result>
-</div>
+<input type="text" placeholder="search" (input)="inputHandler($event)" />
+<app-dropdown
+  [items]="items"
+  [(show)]="show"
+  [keyTitle]="'title'"
+  (selected)="handlerSelect($event)"
+></app-dropdown>

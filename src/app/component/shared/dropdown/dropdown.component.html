@@ -1,0 +1,10 @@
+<div class="list" *ngIf="showStatus">
+  <div
+    class="item" *ngFor="let item of items; let i = index"
+    (click)="select(i)"
+    [title]="item
+    [keyTitle ? keyTitle : 'title']"
+  >
+    {{item[keyTitle ? keyTitle : 'title']}}
+  </div>
+</div>

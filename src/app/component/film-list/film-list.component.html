@@ -1,0 +1,12 @@
+<!--<input type="checkbox" (click)="filterList()" [checked]="filtred" /> <span>Только не отмеченные</span>-->
+<ul>
+  <li
+    *ngFor="let film of list"
+  >
+    <div>
+      <input type="checkbox" [checked]="film.watched" (change)="markAsWatched(!film.watched, film)" />
+      <span (click)="selectFilm(film)">{{film.attrs.title}}</span>
+    </div>
+    <app-button (click)="deleteFilm(film)" variant="danger">delete</app-button>
+  </li>
+</ul>
