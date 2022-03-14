@@ -2,6 +2,7 @@ import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Film } from '../../../domain/film/film';
 import { TMDBRepository } from '../../../infrastructure/repository/TMDBRepository';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FilmRepository } from '../../../infrastructure/repository/FilmRepository';
 
 @Component({
   selector: 'app-info',
@@ -24,18 +25,25 @@ export class InfoComponent implements OnInit {
 
   constructor(
     @Inject('TMDBRepository') public tmdbRepository: TMDBRepository,
-    private sanitizer: DomSanitizer,
+    @Inject('filmRepository') private filmRepo: FilmRepository,
+    public sanitizer: DomSanitizer,
   ) {
   }
 
+  async addFilm(): Promise<void> {
+    const result = await this.filmRepo.addFilm(this.info);
+    console.log(result);
+  }
+
   ngOnInit(): void {
-    this.genres = this.info.attrs.genres.map((genre) => (this.tmdbRepository.genres[genre.id]));
+    this.genres = this.info.attrs.genres.map((genre) => {
+      return this.tmdbRepository.genres[genre.id];
+    });
   }
 
   async ngOnChanges(): Promise<void> {
     const credits = await this.tmdbRepository.getCredit(this.info.attrs.id);
     this.casts = credits.cast;
     this.crew = credits.crew;
-    console.log('FILM', this.info);
   }
 }
