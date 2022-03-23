@@ -25,10 +25,34 @@ export class RestFilm {
     }
   }
 
+  async watchedFilm(film: Film): Promise<void> {
+    const result = await fetch(
+      `${this.url}/film/${film.attrs.id}`,
+      {
+        method: 'PATCH',
+        body: JSON.stringify({ watched: true }),
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      },
+    );
+  }
+
   /**
    * Удаление фильма
    */
   async remove(film: Film): Promise<void> {
+    try {
+      const result = await fetch(
+        `${this.url}/film/${film.attrs.id}`,
+        {
+          method: 'DELETE',
+        }
+      );
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   /**
