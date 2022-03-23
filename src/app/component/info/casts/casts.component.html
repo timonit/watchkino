@@ -1,0 +1,9 @@
+<p>Актеры</p>
+<ul>
+  <li *ngFor="let person of firsts">
+    <img src="https://image.tmdb.org/t/p/w45/{{person.profile_path}}" />
+    <span>
+      Персонаж: <b>{{person.character}}</b><br/> Актер: <b>{{person.name}}</b>
+    </span>
+  </li>
+</ul>

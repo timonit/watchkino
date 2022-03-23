@@ -1,0 +1,12 @@
+<p>video(непонятный булевый аттрибут): {{film.attrs.video ? 'да' : 'нет'}}</p>
+<div class="videos" *ngIf="film.attrs.video">
+  <span>Видеоролики:</span>
+  <div>
+    <iframe
+      *ngFor="let video of film.attrs?.videos?.results"
+      width="560" height="315"
+      [src]="this.sanitizer.bypassSecurityTrustResourceUrl(youtube+video.key)"
+      title="{{video.name}}"
+    ></iframe>
+  </div>
+</div>

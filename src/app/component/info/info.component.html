@@ -1,48 +1,14 @@
-<h2>{{info.attrs.title}} </h2>
-<h3>{{info.attrs.original_title}}</h3>
-<h5>{{info.attrs.tagline}}</h5>
-<img src="https://image.tmdb.org/t/p/w780/{{info.attrs.backdrop_path}}" />
-<span>Рейтинг: {{info.attrs.vote_average}}  </span>
-<span>Количество оценивших: {{info.attrs.vote_count}}</span>
-<p>{{info.attrs.adult ? "Для взрослых" : "нет ограничения в возрасте"}}</p>
-<span>Статус: {{info.attrs.status}}</span>
-<p>
-  Описание:<br />
-  {{info.attrs.overview}}
-</p>
-<p>
-  <span>Жанр: </span>
-  <span *ngFor="let genre of genres">{{genre.name}}, </span>
-</p>
-<p>Бюджет: {{info.attrs.budget}} $</p>
-<span>Сборы: {{info.attrs.revenue}} $</span>
-<p>Оригинальный язык: {{info.attrs.original_language}}</p>
-<p>Популярность: {{info.attrs.popularity}}</p>
-<p>Дата релиза: {{info.attrs.release_date}}</p>
-<p>Страна произвадства:
-  <span *ngFor="let cntry of info.attrs.production_countries">{{cntry.name}}, </span>
-</p>
-<p>Каст</p>
-<ul>
-  <li *ngFor="let person of casts">
-    <img src="https://image.tmdb.org/t/p/w45/{{person.profile_path}}" />
-    <span>
-      Персонаж: <b>{{person.character}}</b><br/> Актер: <b>{{person.name}}</b>
-    </span>
-  </li>
-</ul>
-<p>video(непонятный булевый аттрибут): {{info.attrs.video ? 'да' : 'нет'}}</p>
-<div class="videos">
-  <span>Видеоролики:</span>
-  <div>
-    <iframe
-      *ngFor="let video of info.attrs?.videos.results"
-      width="560" height="315"
-      [src]="this.sanitizer.bypassSecurityTrustResourceUrl(youtube+video.key)"
-      title="{{video.name}}"
-    ></iframe>
-  </div>
-</div>
+<app-head-block
+  [title]="info.attrs.title"
+  [originalTitle]="info.attrs.original_title"
+  [tagline]="info.attrs.tagline"
+  [backdropIMG]="info.attrs.backdrop_path"
+></app-head-block>
+<app-details [film]="info"></app-details>
+<app-casts [film]="info"></app-casts>
+<app-videos [film]="info"></app-videos>
+
 <div class="btns">
+  <button (click)="addFilm()">Добавить</button>
   <ng-content></ng-content>
 </div>
