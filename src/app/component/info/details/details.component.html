@@ -8,10 +8,9 @@
   <span>Жанр: </span>
   <span *ngFor="let genre of genres">{{genre.name}}, </span>
 </div>
-<p>
-  <b>Описание:</b><br/>
+<app-paragrah title="Описание: ">
   {{film.attrs.overview}}
-</p>
+</app-paragrah>
 <div class="other">
   <span>Бюджет: {{film.attrs.budget}} $</span>
   <span>Сборы: {{film.attrs.revenue}} $</span>
