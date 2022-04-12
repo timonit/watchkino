@@ -2,7 +2,7 @@
   "name": "watchkino",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng ",
+    "ng": "ng",
     "start": "ng serve --host 0.0.0.0",
     "build": "ng build",
     "test": "ng test",
