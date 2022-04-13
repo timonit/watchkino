@@ -1,0 +1,7 @@
+<h3>Тут будет описание как добовлять и смотреть инфу про фильмы и мультфильмы</h3>
+<app-content>
+  <app-block-film-list block-film></app-block-film-list>
+  <div *ngIf="content.open">
+    <app-info [info]="content.content"></app-info>
+  </div>
+</app-content>
