@@ -1,7 +1,8 @@
+import { environment } from 'src/environments/environment';
 import { Film } from '../../domain/film/film';
 
 export class RestFilm {
-  url = 'http://localhost:3000';
+  url = environment.backendURL;
 
   /**
    * Сохраняет фильм

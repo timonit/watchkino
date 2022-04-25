@@ -3,7 +3,8 @@
 // The film-list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  backendURL: 'http://45.11.26.15:3000',
 };
 
 /*
