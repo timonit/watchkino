@@ -16,11 +16,16 @@
     background: rgba(0, 0, 0, .2);
   }
 
+  app-paragrah {
+    padding: 0 10px;
+  }
+
   .other {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
 
     height: 3em;
     padding: .5em;

@@ -3,4 +3,8 @@
 :host {
   display: flex;
   flex-direction: column;
+
+  .btns {
+    padding: 10px;
+  }
 }

@@ -1,14 +1,14 @@
 <div class="shorts">
   <span>Рейтинг: {{film.attrs.vote_average}}  </span>
-  <span>Количество оценивших: {{film.attrs.vote_count}}</span>
+  <!-- <span>Количество оценивших: {{film.attrs.vote_count}}</span> -->
   <span>{{film.attrs.adult ? "Для взрослых" : "нет ограничения в возрасте"}}</span>
   <span>Статус: {{film.attrs.status}}</span>
 </div>
 <div class="genres">
-  <span>Жанр: </span>
+  <!-- <span>Жанр: </span> -->
   <span *ngFor="let genre of genres">{{genre.name}}, </span>
 </div>
-<app-paragrah title="Описание: ">
+<app-paragrah>
   {{film.attrs.overview}}
 </app-paragrah>
 <div class="other">

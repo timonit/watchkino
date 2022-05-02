@@ -28,6 +28,7 @@ import { VideosComponent } from './info/videos/videos.component';
     FilmListComponent,
     InfoComponent,
     SearchPanelComponent,
+    SharedModule,
   ],
   imports: [
     CommonModule,

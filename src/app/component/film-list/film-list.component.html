@@ -7,6 +7,6 @@
       <input type="checkbox" [checked]="film.watched" (change)="markAsWatched(!film.watched, film)" />
       <span (click)="selectFilm(film)">{{film.attrs.title}}</span>
     </div>
-    <app-button (click)="deleteFilm(film)" variant="danger">delete</app-button>
+    <app-button (click)="deleteFilm(film)" variant="danger" size="sm">x</app-button>
   </li>
 </ul>
