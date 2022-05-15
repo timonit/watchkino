@@ -1,23 +1,38 @@
+@import "../../common.scss";
+
 :host {
   width: 100%;
+  height: 100vh;
   box-sizing: border-box;
   display: flex;
+  overflow: hidden;
 
-  .film-section {
+  .user-panel {
+    @include main-shadow;
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 250px;
     box-sizing: border-box;
-    padding: 1em;
-  }
+    height: 100%;
+    background-color: $color-BG;
 
-  .search-panel {
-    margin: 0 0 10px 0;
+    .user-details {
+      @include Simple;
+      height: 50px;
+      background-color: $color-main;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color-gray-light;
+    }
   }
 
   .view-content {
-    width: 80%;
-    padding: 1em;
+    @include main-shadow;
+    background-color: white;
+    width: 100px;
+    flex-grow: 1;
+    overflow: auto;
     box-sizing: border-box;
   }
 }

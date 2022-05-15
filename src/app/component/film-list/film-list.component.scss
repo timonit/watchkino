@@ -5,11 +5,10 @@
 }
 
 ul {
+  @include Simple;
   list-style: none;
   padding: 1em 0;
   margin: 0;
-  font-size: 15pt;
-
 
   li {
     margin: 0;
@@ -19,7 +18,7 @@ ul {
     align-items: center;
 
     &:hover {
-      background: $color-blue-light;
+      background: $color-gray-light;
     }
 
     div {

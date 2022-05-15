@@ -9,14 +9,12 @@ import { TMDBRepository } from '../infrastructure/repository/TMDBRepository';
 import { ContentService } from './service/content/content.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContentComponent } from './layout/content/content.component';
-import { BlockBodyComponent } from './layout/block-body/block-body.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentComponent,
-    BlockBodyComponent,
   ],
   imports: [
     BrowserModule,

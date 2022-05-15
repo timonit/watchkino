@@ -1,23 +1,25 @@
 <div class="shorts">
   <span>Рейтинг: {{film.attrs.vote_average}}  </span>
-  <span>Количество оценивших: {{film.attrs.vote_count}}</span>
+  <!-- <span>Количество оценивших: {{film.attrs.vote_count}}</span> -->
   <span>{{film.attrs.adult ? "Для взрослых" : "нет ограничения в возрасте"}}</span>
   <span>Статус: {{film.attrs.status}}</span>
 </div>
 <div class="genres">
-  <span>Жанр: </span>
+  <!-- <span>Жанр: </span> -->
   <span *ngFor="let genre of genres">{{genre.name}}, </span>
 </div>
-<app-paragrah title="Описание: ">
-  {{film.attrs.overview}}
-</app-paragrah>
-<div class="other">
-  <span>Бюджет: {{film.attrs.budget}} $</span>
-  <span>Сборы: {{film.attrs.revenue}} $</span>
-  <span>Оригинальный язык: {{film.attrs.original_language}}</span>
-  <span>Популярность: {{film.attrs.popularity}}</span>
-  <span>Релиза: {{film.attrs.release_date}}</span>
-  <span>Страна:
-    <span *ngFor="let cntry of film.attrs.production_countries">{{cntry.name}}, </span>
-  </span>
+<div class="descriptions">
+  <app-paragrah>
+    {{film.attrs.overview}}
+  </app-paragrah>
+  <div class="other">
+    <span>Бюджет: {{film.attrs.budget}} $</span>
+    <span>Сборы: {{film.attrs.revenue}} $</span>
+    <span>Оригинальный язык: {{film.attrs.original_language}}</span>
+    <span>Популярность: {{film.attrs.popularity}}</span>
+    <span>Релиза: {{film.attrs.release_date}}</span>
+    <span>Страна:
+      <span *ngFor="let cntry of film.attrs.production_countries">{{cntry.name}}, </span>
+    </span>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-head-block',
@@ -10,4 +10,13 @@ export class HeadBlockComponent {
   @Input() title: string;
   @Input() originalTitle: string;
   @Input() tagline: string;
+
+  @HostBinding('style') get hostStyle() {
+    return {
+      backgroundImage: `url(https://image.tmdb.org/t/p/w780/${this.backdropIMG})`,
+      backgroundPosition: 'left top',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    };
+  }
 }

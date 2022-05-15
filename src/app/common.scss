@@ -1,24 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-// color
-$color-blue-dark: rgb(50,70,80);
-$color-blue-light: rgb(150,180,200);
-$color-white-dark: rgb(220,220,220);
+// colors
+$color-red: #f75858;
+$color-green: #59b157;
+$color-dark: #282828;
+$color-gray-light: #f1f0f0;
 $color-white: white;
+$color-gray-dark: #838383;
+$color-gray: #c6c6c6;
+$color-blue: #6687c7;
+$color-link: #5a48ff;
+$color-secondary: #250000;
+$color-main: #aa1616;
+$color-BG: #f4f4f4;
 
-$color-danger: rgb(200, 100, 100);
-$color-primary: rgb(100, 100, 200);
-$color-success: rgb(100, 200, 100);
+$color-dark-transparent: rgba(40, 40, 40, .4);
+$color-light-transparent: rgba(255, 255, 255, .4);
+
+//effects
+@mixin main-shadow {
+    box-shadow: 0 0 7px 5px rgba(0, 0, 0, .2);
+}
 
 // font
-$font-main: 'Fira Sans Extra Condensed';
-$fira-weight-thin: 100;
-$fira-weight-extra-light: 200;
-$fira-weight-light: 300;
-$fira-weight-regular: 400;
-$fira-weight-medium: 500;
-$fira-weight-semi-bold: 600;
-$fira-weight-bold: 700;
-$fira-weight-extra-bold: 800;
-$fira-weight-black: 900;
+$font-main: 'Mulish', sans-serif;
 
+@mixin H1 {
+    font-family: $font-main;
+    font-size: 32px;
+    font-weight: 800;
+    color: $color-dark;
+}
+
+@mixin H2 {
+    font-family: $font-main;
+    font-size: 24px;
+    font-weight: 700;
+    color: $color-dark;
+}
+
+@mixin Subtitle {
+    font-family: $font-main;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+@mixin Link {
+    font-family: $font-main;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration-line: underline;
+    color: $color-link;
+}
+
+@mixin Simple {
+    font-family: $font-main;
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-dark;
+}
+
+@mixin Highlight {
+    font-family: $font-main;
+    font-size: 14px;
+    font-weight: 700;
+    color: $color-dark;
+}
+
+@mixin Quote {
+    font-family: $font-main;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-dark;
+}
+
+@mixin Paragraph {
+    font-family: $font-main;
+    font-size: 14px;
+    font-weight: 400;
+    text-indent: 10px;
+    color: $color-dark;
+}

@@ -1,16 +1,21 @@
 @import "../../../common";
 
 :host {
-  padding: .3em .5em;
-  border-radius: 5px;
+  @include Highlight;
+  display: flex;
+  padding: 0 20px;
+  height: 30px;
+  align-items: center;
+  width: fit-content;
+  color: $color-white;
 
   &.primary {
-    background-color: $color-primary;
+    background-color: $color-blue;
   }
   &.success {
-    background-color: $color-success;
+    background-color: $color-green;
   }
   &.danger {
-    background-color: $color-danger;
+    background-color: $color-red;
   }
 }
