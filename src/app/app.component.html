@@ -1,4 +1,10 @@
 <app-content>
   <app-block-film-list block-film></app-block-film-list>
-  <app-info [info]="content.content"></app-info>
+  <app-info
+    *ngIf="content.content; else emptyContent"
+    [info]="content.content"
+  ></app-info>
+  <ng-template #emptyContent>
+    <span>Выберите фильм</span>
+  </ng-template>
 </app-content>
