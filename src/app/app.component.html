@@ -1,9 +1,4 @@
 <app-content>
   <app-block-film-list block-film></app-block-film-list>
-  <div *ngIf="content.open; else elseBlock">
-    <app-info [info]="content.content"></app-info>
-  </div>
-  <ng-template #elseBlock>
-    <span>Тут будет описание как добовлять и смотреть инфу про фильмы</span>
-  </ng-template>
+  <app-info [info]="content.content"></app-info>
 </app-content>

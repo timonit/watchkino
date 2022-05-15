@@ -1,14 +1,24 @@
+@import "../../common.scss";
+
 :host {
-  padding: .5em;
+  width: 300px;
+  height: 30px;
+  position: fixed;
+  z-index: 1000;
+  top: 10px;
+  right: 40px;
   display: flex;
   flex-direction: column;
-  background-color: whitesmoke;
-  border-radius: .5em;
+  background-color: $color-white;
+  border: solid 5px;
+  border-color: $color-main;
 
   input {
+    @include Simple;
+    position: relative;
     border: none;
     background-color: transparent;
-    font-size: 13pt;
+    height: 100%;
 
     &:focus {
       outline: none;

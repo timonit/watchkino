@@ -8,16 +8,18 @@
   <!-- <span>Жанр: </span> -->
   <span *ngFor="let genre of genres">{{genre.name}}, </span>
 </div>
-<app-paragrah>
-  {{film.attrs.overview}}
-</app-paragrah>
-<div class="other">
-  <span>Бюджет: {{film.attrs.budget}} $</span>
-  <span>Сборы: {{film.attrs.revenue}} $</span>
-  <span>Оригинальный язык: {{film.attrs.original_language}}</span>
-  <span>Популярность: {{film.attrs.popularity}}</span>
-  <span>Релиза: {{film.attrs.release_date}}</span>
-  <span>Страна:
-    <span *ngFor="let cntry of film.attrs.production_countries">{{cntry.name}}, </span>
-  </span>
+<div class="descriptions">
+  <app-paragrah>
+    {{film.attrs.overview}}
+  </app-paragrah>
+  <div class="other">
+    <span>Бюджет: {{film.attrs.budget}} $</span>
+    <span>Сборы: {{film.attrs.revenue}} $</span>
+    <span>Оригинальный язык: {{film.attrs.original_language}}</span>
+    <span>Популярность: {{film.attrs.popularity}}</span>
+    <span>Релиза: {{film.attrs.release_date}}</span>
+    <span>Страна:
+      <span *ngFor="let cntry of film.attrs.production_countries">{{cntry.name}}, </span>
+    </span>
+  </div>
 </div>

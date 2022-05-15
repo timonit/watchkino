@@ -6,7 +6,7 @@ type StyleVariant = 'success' | 'danger' | 'primary';
 
 const fontSize = {
   sm: '10pt',
-  md: '13pt',
+  md: '14px',
   lg: '16pt',
 };
 

@@ -1,4 +1,8 @@
+@import "../../../common.scss";
+
 :host {
+  @include Paragraph;
+
   .paragraph__title {
     margin-right: .5em;
   }

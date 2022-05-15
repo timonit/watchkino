@@ -1,34 +1,48 @@
+@import "../../../common.scss";
+
 :host {
-  padding: 1em 0;
   display: flex;
   flex-direction: column;
 
   .shorts {
+    @include Simple;
     display: flex;
     justify-content: space-around;
-    font-weight: bold;
+    align-items: center;
+    height: 30px;
+    color: $color-white;
+    background-color: $color-secondary;
   }
 
   .genres {
-    margin-top: 1em;
-    padding: 1em;
-    text-align: center;
-    background: rgba(0, 0, 0, .2);
-  }
-
-  app-paragrah {
-    padding: 0 10px;
-  }
-
-  .other {
+    @include Simple;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-
-    height: 3em;
-    padding: .5em;
+    justify-content: center;
     background: rgba(0, 0, 0, .2);
+    height: 30px;
+    color: $color-white;
+    background-color: $color-main;
+  }
+
+  .descriptions {
+    margin-top: 10px;
+    display: flex;
+
+    app-paragrah {
+      padding: 0 10px;
+    }
+  
+    .other {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      color: $color-white;
+      width: 300px;
+      flex-shrink: 0;
+  
+      padding: 10px 10px 10px 20px;
+      background: $color-secondary;
+    }
   }
 }
