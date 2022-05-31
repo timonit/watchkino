@@ -49,7 +49,7 @@ export class FilmRepository extends RemoteRepository implements IFilmRepository 
 
   async watchedFilm(film: Film): Promise<boolean> {
     try {
-      await this.store.save(film);
+      await this.store.watchedFilm(film);
       return true;
     } catch (error) {
       const ErrorClass = ErrorFabric.errorWithCode(error.code);
